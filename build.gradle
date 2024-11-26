@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+    
+    // Optional: Add testing library
+    testImplementation 'junit:junit:4.13.2'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+// Custom task for Subscriber
+task runSubscriber(type: JavaExec) {
+    group = 'application'
+    description = 'Run the MQTT Subscriber client'
+    main = 'com.onlineshop.MQTTSubscriberExample'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+// Custom task for Publisher
+task runPublisher(type: JavaExec) {
+    group = 'application'
+    description = 'Run the MQTT Publisher client'
+    main = 'com.onlineshop.MQTTPublisherExample'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+// application {
+//    mainClass.set('com.onlineshop.MQTTClientExample') // Hauptklasse hier anpassen
+//}
