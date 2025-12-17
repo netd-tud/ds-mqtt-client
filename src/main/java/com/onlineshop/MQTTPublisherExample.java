@@ -14,7 +14,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 // start with gradle runPublisher
 public class MQTTPublisherExample {
 
-    private static final String BROKER_URL = "tcp://ds-exercise-01.netd.cs.tu-dresden.de:1883";
+    private static final String BROKER_URL = "tcp://ds-exercise-03.netd.cs.tu-dresden.de:1883";
     private static final String CLIENT_ID = "MQTTPublisherExample";
     private static final String TOPIC = "simple_topic";
  
@@ -36,7 +36,7 @@ public class MQTTPublisherExample {
             Integer counter = 0;
  
             // Periodically publish messages
-            while (true) {
+            while (counter<10) {
                 counter++;
                 LocalDateTime now = LocalDateTime.now();
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

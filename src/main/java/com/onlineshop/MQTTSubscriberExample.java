@@ -10,7 +10,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 // start with gradle runSubscriber
 public class MQTTSubscriberExample {
 
-private static final String BROKER_URL = "tcp://ds-exercise-01.netd.cs.tu-dresden.de:1883";
+private static final String BROKER_URL = "tcp://ds-exercise-03.netd.cs.tu-dresden.de:1883";
 private static final String CLIENT_ID = "MQTTSubscriberExample";
 private static final String TOPIC = "simple_topic";
 

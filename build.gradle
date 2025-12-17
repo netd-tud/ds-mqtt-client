@@ -25,7 +25,7 @@ tasks.withType(JavaCompile) {
 task runSubscriber(type: JavaExec) {
     group = 'application'
     description = 'Run the MQTT Subscriber client'
-    main = 'com.onlineshop.MQTTSubscriberExample'
+    mainClass = 'com.onlineshop.MQTTSubscriberExample'
     classpath = sourceSets.main.runtimeClasspath
 }
 
@@ -33,7 +33,7 @@ task runSubscriber(type: JavaExec) {
 task runPublisher(type: JavaExec) {
     group = 'application'
     description = 'Run the MQTT Publisher client'
-    main = 'com.onlineshop.MQTTPublisherExample'
+    mainClass = 'com.onlineshop.MQTTPublisherExample'
     classpath = sourceSets.main.runtimeClasspath
 }
 
